@@ -1,0 +1,5 @@
+Enter the expression:: x^2+3x^2+3+4x^4=0
+deg:: 2 coeff:: 1
+deg:: 2 coeff:: 3
+deg:: 0 coeff:: 3
+deg:: 4 coeff:: 4
