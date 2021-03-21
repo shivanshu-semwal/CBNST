@@ -1,16 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// print the array
-void printArray(int row, int col, double *a) {
-    for (int i = 0; i < row; i++) {
-        for (int j = 0; j < col; j++) {
-            printf("%.2lf ", *(a + col * i + j));
-        }
-        printf("\n");
-    }
-}
-
 int main() {
     int n;
     printf("Enter the dimensions:: ");
