@@ -47,7 +47,8 @@ int main() {
             }
         }
         if (a[i][i] == 0) {
-            continue;
+            fprintf(stderr, "Given system of eq do not have a Unique Solution.");
+            // continue;
         }
 
         // make the first element 1
