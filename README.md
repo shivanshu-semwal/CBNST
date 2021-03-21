@@ -2,13 +2,6 @@
 
 ## Index
 
-- **lab1**
-  - change a matrix to upper and lower matrix
-  - make a polynomial expression parser to get the degree and coefficient
-- **lab2**
-  - demonstrate how to use mathematical functions with help of `math.h` lib
-- **lab3**
-  - generic function for bijection method (for single variable)
 - **minimal programs**
   - [bisection](./src/bisection.c)
   - [regula falsi](./src/regula_falsi.c)
