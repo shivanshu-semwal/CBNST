@@ -44,6 +44,7 @@ int main() {
         }
         if (a[i][i] == 0) {
             fprintf(stderr, "Given system of eq do not have a Unique Solution.");
+            return 1;
             // continue;
         }
 
