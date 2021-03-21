@@ -31,7 +31,13 @@ int main() {
         Printing input matrix
      */
     printf("Input Matrix:: \n");
-    printArray(n, n + 1, &a[0][0]);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n + 1; j++) {
+            if (j == n) printf(" | ");
+            printf("%.2lf ", a[i][j]);
+        }
+        printf("\n");
+    }
 
     // converting lower triangular matrix
     for (int i = 0; i < n; i++) {
@@ -68,7 +74,13 @@ int main() {
     }
 
     printf("Upper Triangular:: \n");
-    printArray(n, n + 1, &a[0][0]);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n + 1; j++) {
+            if (j == n) printf(" | ");
+            printf("%.2lf ", a[i][j]);
+        }
+        printf("\n");
+    }
 
     for (int i = n - 1; i >= 0; i--) {
         for (int j = i - 1; j >= 0; j--) {
@@ -81,7 +93,13 @@ int main() {
     }
 
     printf("Diagonal :: \n");
-    printArray(n, n + 1, &a[0][0]);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n + 1; j++) {
+            if (j == n) printf(" | ");
+            printf("%.2lf ", a[i][j]);
+        }
+        printf("\n");
+    }
 
     double x[n]; // array to store solutions
     for (int i = 0; i < n; i++) {

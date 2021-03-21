@@ -1,16 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// print the array
-void printArray(int row, int col, double *a) {
-    for (int i = 0; i < row; i++) {
-        for (int j = 0; j < col; j++) {
-            printf("%.2lf ", *(a + col * i + j));
-        }
-        printf("\n");
-    }
-}
-
 int main() {
     int n;
     printf("Enter the dimensions:: ");
@@ -31,7 +21,13 @@ int main() {
         Printing input matrix
      */
     printf("Input Matrix:: \n");
-    printArray(n, n + 1, &a[0][0]);
+        for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n + 1; j++) {
+            if (j == n) printf(" | ");
+            printf("%.2lf ", a[i][j]);
+        }
+        printf("\n");
+    }
 
     // converting lower triangular matrix
     for (int i = 0; i < n; i++) {
@@ -68,7 +64,13 @@ int main() {
     }
 
     printf("Upper Triangular:: \n");
-    printArray(n, n + 1, &a[0][0]);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n + 1; j++) {
+            if (j == n) printf(" | ");
+            printf("%.2lf ", a[i][j]);
+        }
+        printf("\n");
+    }
 
     /* 
         Backward Substitution
