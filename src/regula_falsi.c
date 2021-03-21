@@ -7,12 +7,18 @@ double f(double x) {
 int main() {
 
     double c = 0, x0, x1;
-    double t = 0.00001;
+
+    // calculating tolerance
+    int noDigits = 4;
+    double t = 0.5 * pow(10.0, -noDigits);
+
     x0 = 0;
     x1 = 1;
     while (f(x0) * f(x1) > 0) {
+        printf("Enter a valid range:: ");
         scanf("%lf %lf", &x0, &x1);
     }
+
     double x_prev = 0;
     while (1) {
         x_prev = c;
@@ -26,7 +32,7 @@ int main() {
             x0 = c;
         }
         if (c - x_prev < t) {
-            printf("Result is :: %lf  within %lf precision", c, t);
+            printf("Result is :: %lf  within %lf tolerance", c, t);
             break;
         }
     }
