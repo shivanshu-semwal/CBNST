@@ -8,7 +8,8 @@
   - [newton raphson](./src/newton_rahpson.c)
   - [gauss elimination](./src/gauss_elimination.c)
   - [gauss jordan](./src/gauss_jordan.c)
-
+  - [gauss jacobi](./src/gauss_jacobi.c)
+  - [gauss seidel](./src/gauss_seidel.c)
 
 ## Linking libraries
 
