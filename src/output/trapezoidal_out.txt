@@ -1,0 +1,12 @@
+Enter values of x0(lower limit), xn(upper limit), h(height of each sub interval):
+0 6 1 
+1.000000 interval size ~ 6 intervals
+x               y
+0.000000        1.000000
+1.000000        0.500000
+2.000000        0.200000
+3.000000        0.100000
+4.000000        0.058824
+5.000000        0.038462
+6.000000        0.027027
+Value of the integral is:: 1.366173 

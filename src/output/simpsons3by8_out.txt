@@ -1,0 +1,5 @@
+Enter lower limit of integration: 0    
+Enter upper limit of integration: 6
+Enter number of sub intervals: 6
+
+Value of the integral is:: 1.357081 

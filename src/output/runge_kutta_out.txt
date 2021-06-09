@@ -1,0 +1,13 @@
+y' = f(x,y) = (x-y)/(x+y)   given.
+Enter initial value for x (x_0): 0
+Enter initial value for y (y_0): 1
+Enter the spacing value for x (h): 0.02
+Enter the value of x at which y is required: (x_n): 0.1
+x               y
+0.000000        1.000000
+0.020000        0.980400
+0.040000        0.961599
+0.060000        0.943594
+0.080000        0.926380
+0.100000        0.909950
+f(0.100000) = 0.909950  

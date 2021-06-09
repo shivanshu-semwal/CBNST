@@ -1,21 +1,26 @@
 #include <math.h>
 #include <stdio.h>
 
-double f(x) {
+double f(double x) {
     return (1 / (1 + x * x));
 }
 
 int main() {
 
-    float lower, upper, integration = 0.0, stepSize, k;
+    double lower, upper, integration = 0.0, stepSize, k;
     int i, subInterval;
 
     printf("Enter lower limit of integration: ");
-    scanf("%f", &lower);
+    scanf("%lf", &lower);
     printf("Enter upper limit of integration: ");
-    scanf("%f", &upper);
+    scanf("%lf", &upper);
     printf("Enter number of sub intervals: ");
     scanf("%d", &subInterval);
+
+    if(subInterval % 3 != 0){
+        printf("Number of subintervals should be multiple of 3.\n");
+        return 1;
+    }
 
     stepSize = (upper - lower) / subInterval;
     integration = f(lower) + f(upper);
@@ -29,7 +34,7 @@ int main() {
     }
     integration = integration * stepSize * 3 / 8;
 
-    printf("\nRequired value of integration is: %.3f", integration);
+    printf("\nValue of the integral is:: %lf", integration);
 
     return 0;
 }

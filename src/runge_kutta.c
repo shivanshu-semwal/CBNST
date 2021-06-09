@@ -1,34 +1,44 @@
-#include <math.h>
 #include <stdio.h>
 
-float f(float x, float y) {
-    float m;
+double f(double x, double y) {
+    double m;
     m = (x - y) / (x + y);
     return m;
 }
 
 int main() {
-    
-    float x0, y0, m1, m2, m3, m4, m, y, x, h, xn;
-    
-    printf("Enter x0,y0,xn,h:");
-    scanf("%f %f %f %f", &x0, &y0, &xn, &h);
-    
+
+    double x0, y0, k1, k2, k3, k4, delta, y, x, h, xn;
+
+    printf("y' = f(x,y) = (x-y)/(x+y)   given.\n");
+
+    printf("Enter initial value for x (x_0): ");
+    scanf("%lf", &x0);
+    printf("Enter initial value for y (y_0): ");
+    scanf("%lf", &y0);
+    printf("Enter the spacing value for x (h): ");
+    scanf("%lf", &h);
+    printf("Enter the value of x at which y is required: (x_n): ");
+    scanf("%lf", &xn);
+
     x = x0;
     y = y0;
-    
-    printf("\n\nX\t\tY\n");
-    
+
+    printf("x\t\ty\n");
+    printf("%lf\t%lf\n", x, y);
+
     while (x < xn) {
-        m1 = f(x0, y0);
-        m2 = f((x0 + h / 2.0), (y0 + m1 * h / 2.0));
-        m3 = f((x0 + h / 2.0), (y0 + m2 * h / 2.0));
-        m4 = f((x0 + h), (y0 + m3 * h));
-        m = ((m1 + 2 * m2 + 2 * m3 + m4) / 6);
-        y = y + m * h;
+        k1 = h * f(x, y);
+        k2 = h * f((x + h / 2.0), (y + k1 / 2.0));
+        k3 = h * f((x + h / 2.0), (y + k2 / 2.0));
+        k4 = h * f((x + h), (y + k3));
+        delta = ((k1 + 2 * k2 + 2 * k3 + k4) / 6.0);
+        y = y + delta;
         x = x + h;
-        printf("%f\t%f\n", x, y);
+        printf("%lf\t%lf\n", x, y);
     }
+
+    printf("f(%lf) = %lf", xn, y);
 
     return 0;
 }

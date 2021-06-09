@@ -1,40 +1,47 @@
 #include <stdio.h>
 
-float f(float x) {
+/* function for which the integral is calculated */
+double f(double x) {
     return (1 / (1 + x));
 }
-void main() {
-    
+
+int main() {
+
     int i, n;
-    float x0, xn, h, y[20], so, se, ans, x[20];
-    
-    printf("\n Enter values of x0,xn,h: ");
-    scanf("%f%f%f", &x0, &xn, &h);
-    
+    double x0, xn, h, y[1000], so, se, ans, x[1000];
+
+    // taking input
+    printf("\nEnter values of x0(lower limit), xn(upper limit), h(height of each sub interval):\n");
+    scanf("%lf%lf%lf", &x0, &xn, &h);
+
+    // finding number of intervals
     n = (xn - x0) / h;
     if (n % 2 == 1)
         n = n + 1;
     h = (xn - x0) / n;
-    
-    printf("\n Refined value of n and h are:%d %f\n", n, h);
-    printf("\n Y values: \n");
-    
+
+    printf("%lf interval size ~ %d\n", h, n);
+    printf("x\t\ty\n");
+
+    // calculating values of y
     for (i = 0; i <= n; i++) {
         x[i] = x0 + i * h;
         y[i] = f(x[i]);
-        printf("\n %f\n", y[i]);
+        printf("%lf\t%lf\n", x[i], y[i]);
     }
-    so = 0;
-    se = 0;
+    so = 0; // sum of odd terms
+    se = 0; // sum of even termas
     for (i = 1; i < n; i++) {
         if (i % 2 == 1)
             so = so + y[i];
         else
             se = se + y[i];
     }
+
+    /* simpsons 1/3 rule */
     ans = h / 3 * (y[0] + y[n] + 4 * so + 2 * se);
 
-    printf("\n Final integration is %f", ans);
-    
+    printf("Value of the integral is:: %lf", ans);
+
     return 0;
 }
