@@ -1,3 +1,7 @@
+/* 
+    Newton Raphson's Method
+*/
+
 #include <math.h>
 #include <stdio.h>
 
