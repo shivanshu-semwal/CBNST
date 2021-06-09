@@ -1,26 +1,45 @@
-/* 
-    trapezoidal rule
-*/
-
+#include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
 
-double f(double x){
-    return x*x;
+float f(float x) {
+    return (1 / (1 + pow(x, 2)));
 }
 
-int main(){
-    double x_0, x_n, n;
-    printf("Enter the lower limit: ");
-    scanf("%lf", &x_0);
-    printf("Enter the upper limit: ");
-    scanf("%lf", &x_n);
-    printf("Enter the no od partitions n: ");
-    scanf("%lf", &n);
+void main() {
     
-    double y=0;
-    double h = (x_n - x_0)/n;
+    int i, n;
+    float x0, xn, h, y[20], so, se, ans, x[20];
+    
+    printf("\n Enter values of x0,xn,h:\n");
+    scanf("%f%f%f", &x0, &xn, &h);
+    
+    n = (xn - x0) / h;
+    if (n % 2 == 1) {
+        n = n + 1;
+    }
+    h = (xn - x0) / n;
+    
+    printf("\nrefined value of n and h are:%d %f\n", n, h);
+    printf("\n Y values \n");
+    
+    for (i = 0; i <= n; i++) {
+        x[i] = x0 + i * h;
+        y[i] = f(x[i]);
+        printf("\n%f\n", y[i]);
+    }
+    so = 0;
+    se = 0;
+    
+    for (i = 1; i < n; i++) {
+        if (i % 2 == 1) {
+            so = so + y[i];
+        } else {
+            se = se + y[i];
+        }
+    }
+    ans = h / 3 * (y[0] + y[n] + 4 * so + 2 * se);
+    
+    printf("\nfinal integration is %f", ans);
 
-    for(int i=1;i<n;i++)
     return 0;
 }
