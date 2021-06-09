@@ -16,7 +16,7 @@
   - [Trapezoidal Method](./src/trapezoidal.c)
   - [Simpson 1/3 Method](./src/simpsons1by3.c)
   - [Simpson 3/8 Method](./src/simpsons3by8.c)
-  - [Euler's Method]
+  - [Euler's Method](./src/euler.c)
   - [Runge–Kutta methods](./src/runge_kutta.c)
 
 ## Linking libraries
